@@ -161,4 +161,37 @@ body {
   -ms-flex-preferred-size: 15%;
       flex-basis: 15%;
 }
+
+.button-section .button-inner {
+  position: relative;
+  top: 55px;
+  height: 6px;
+  background: -webkit-gradient(linear, left top, right top, from(#363636), color-stop(30%, black), color-stop(38%, transparent), color-stop(62%, transparent), color-stop(70%, black), to(#363636));
+  background: linear-gradient(to right, #363636 0%, black 30%, transparent 38%, transparent 62%, black 70%, #363636 100%);
+  z-index: -1;
+}
+
+.button-section .generate-btn {
+  width: 350px;
+  height: 70px;
+  margin: 0 auto;
+  margin-top: 20px;
+  color: #ababab;
+  font-weight: bold;
+  font-size: 2rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #000000;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#363636), to(#181717));
+  background-image: linear-gradient(to right bottom, #363636 0%, #181717 100%);
+  -webkit-box-shadow: 0 0 9px black;
+          box-shadow: 0 0 9px black;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button-section .generate-btn:hover {
+  color: white;
+  letter-spacing: 2px;
+}
 /*# sourceMappingURL=style.css.map */
