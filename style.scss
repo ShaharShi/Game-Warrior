@@ -143,6 +143,33 @@ body {
 // -------------------------------  Bottom BTN  ---- >
 .button-section {
     flex-basis: 15%;
+    
+    .button-inner {
+        position: relative;
+        top: 55px;
+        height: 6px;
+        background: linear-gradient(to right, #363636 0%, black 30%, transparent 38%, transparent 62%, black 70%, #363636 100%);
+        z-index: -1;
+    }
+    .generate-btn {
+        width: 350px;
+        height: 70px;
+        margin: 0 auto;
+        margin-top: 20px;
+        color: $light_text_color;
+        font-weight: bold;
+        font-size: 2rem;
+        border: none;
+        border-radius: 20px;
+        background-color: #000000;
+        background-image: linear-gradient(to right bottom, #363636 0%, #181717 100%);
+        box-shadow: 0 0 9px rgb(0, 0, 0);
+        transition: all 0.3s;
+        &:hover {
+            color: lighten($light_text_color, 100);
+            letter-spacing: 2px;
+        }
+    }
 }
 
 
