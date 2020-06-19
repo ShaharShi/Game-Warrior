@@ -1,0 +1,84 @@
+// ---------------------------------  Declaration Area  ------- >
+$dark_color: black;
+$light_color: rgb(255, 255, 255);
+$dark_text_color: rgb(41, 41, 41);
+$light_text_color: rgb(171, 171, 171);
+
+$brown_bg: radial-gradient( #bc6f03 0%, #874000 74%);
+$green_bg: radial-gradient(#538c19 0%, #1a512e 74%);
+$red_bg: radial-gradient(#a90000 0%, #7b0000 74%);
+$golden_bg: radial-gradient(#ddc000 0%, #ffa515 74%);
+
+// -------------------------------  General Style & Class  ---- >
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url('https://i.pinimg.com/originals/86/cb/99/86cb99d27d7cdaef5572a21c5167e625.png') no-repeat;
+    background-size: 100vw 100vh;
+}
+.block { display: block; }
+
+// Cards dynamic background colors -- >
+
+.brown-bg {
+    background: $brown_bg;
+    border: 10px solid rgba(0, 0, 0, 0.4);
+}
+.green-bg {
+    background: $green_bg;
+    border: 10px solid rgba(0, 0, 0, 0.4);
+}
+.red-bg {
+    background: $red_bg;
+    border: 10px solid rgba(0, 0, 0, 0.4);
+}
+.golden-bg {
+    background: $golden_bg;
+    border: 10px solid rgba(0, 0, 0, 0.4);
+}
+
+// -------------------------------  Card Construct & Style  ---- >
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.warrior-cards-container {
+    flex-basis: 85%;
+    overflow-y: scroll;
+
+
+    .warrior-cards-wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 20px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-row-gap: 50px;
+
+        .card-wrapper {
+            justify-self: center;
+            width: 350px;
+            height: 400px;
+            border-radius: 50px;
+            box-shadow: 0 0 40px rgb(0, 0, 0);
+            
+            .card-self {
+                margin: 5px;
+                border-radius: 50px;
+            }
+        }
+        
+    } // warrior-cards-wrapper
+} // warrior-cards-container
+
+
+// -------------------------------  Bottom BTN  ---- >
+.button-section {
+    flex-basis: 15%;
+}
