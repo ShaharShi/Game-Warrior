@@ -3,6 +3,7 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
 }
 
 body {
@@ -34,6 +35,22 @@ body {
   border: 10px solid rgba(0, 0, 0, 0.4);
 }
 
+.golden-style-set .card-item-1 {
+  color: black !important;
+}
+
+.golden-style-set .card-item-1 h1 {
+  text-shadow: 1px 1px #bbbbbb, -2px 0px #4e4e4e !important;
+}
+
+.golden-style-set .card-item-1 span {
+  color: black !important;
+}
+
+.golden-style-set .card-icon {
+  color: black !important;
+}
+
 .main-container {
   width: 100vw;
   height: 100vh;
@@ -49,7 +66,7 @@ body {
 .warrior-cards-container {
   -ms-flex-preferred-size: 85%;
       flex-basis: 85%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .warrior-cards-container .warrior-cards-wrapper {
@@ -75,9 +92,69 @@ body {
           box-shadow: 0 0 40px black;
 }
 
-.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-self {
-  margin: 5px;
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-self, .warrior-cards-container .warrior-cards-wrapper .card-wrapper .golden-style-set {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 20% 60% 20%;
+      grid-template-rows: 20% 60% 20%;
   border-radius: 50px;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-1 {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-align: center;
+  color: white;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-1 h1 {
+  text-shadow: 1px 1px black, -3px 1px black;
+  letter-spacing: 2px;
+  font-size: 2.4rem;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-1 span {
+  color: #ababab;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-2 {
+  overflow: hidden;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-2 img {
+  width: auto;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-3 .card-icon {
+  text-align: center;
+  color: #ababab;
+  font-weight: bold;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-3 .card-icon i, .warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-3 .card-icon b {
+  color: white;
+  font-size: 1.6rem;
+  text-shadow: -1px -2px 3px black;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-3 .card-icon span {
+  font-size: 1.2rem;
 }
 
 .button-section {

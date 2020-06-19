@@ -14,6 +14,7 @@ $golden_bg: radial-gradient(#ddc000 0%, #ffa515 74%);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
 }
 body {
     background: url('https://i.pinimg.com/originals/86/cb/99/86cb99d27d7cdaef5572a21c5167e625.png') no-repeat;
@@ -39,6 +40,22 @@ body {
     background: $golden_bg;
     border: 10px solid rgba(0, 0, 0, 0.4);
 }
+.golden-style-set {
+    @extend .card-self;
+
+    .card-item-1 {
+        color: rgb(0, 0, 0) !important;
+        
+        h1 {
+            text-shadow: 1px 1px rgb(187, 187, 187), -2px 0px rgb(78, 78, 78) !important;
+        }
+        span {
+            color: rgb(0, 0, 0) !important;
+        }
+    }
+        
+    .card-icon { color: rgb(0, 0, 0) !important; }
+}
 
 // -------------------------------  Card Construct & Style  ---- >
 .main-container {
@@ -49,7 +66,7 @@ body {
 }
 .warrior-cards-container {
     flex-basis: 85%;
-    overflow-y: scroll;
+    overflow-y: auto;
 
 
     .warrior-cards-wrapper {
@@ -69,8 +86,53 @@ body {
             box-shadow: 0 0 40px rgb(0, 0, 0);
             
             .card-self {
-                margin: 5px;
+                height: 100%;
+                display: grid;
+                grid-template-rows: 20% 60% 20%;
                 border-radius: 50px;
+            }
+            .card-item-1 {
+                justify-self: center;
+                text-align: center;
+                color: lighten($light_text_color, 100);
+                
+                h1 {
+                    text-shadow: 1px 1px rgb(0, 0, 0), -3px 1px rgb(0, 0, 0);
+                    letter-spacing: 2px;
+                    font-size: 2.4rem; 
+                }
+                span {
+                    color: $light_text_color;
+                    font-size: 1.2rem; 
+                    font-weight: 600;
+                }
+            }
+            .card-item-2 {
+                overflow: hidden;
+
+                img {
+                    width: auto;
+                    max-height:100%;
+                    margin: 0 auto;
+                }
+            }
+            .card-item-3 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+                justify-items: center;
+                
+                .card-icon {
+                    text-align: center;
+                    color: $light_text_color;
+                    font-weight: bold;
+                    i , b{
+                        color: lighten($light_text_color, 100);
+                        font-size: 1.6rem;
+                        text-shadow: -1px -2px 3px black;
+                    }
+                    span { font-size: 1.2rem; }
+                }
             }
         }
         
@@ -82,3 +144,6 @@ body {
 .button-section {
     flex-basis: 15%;
 }
+
+
+    
