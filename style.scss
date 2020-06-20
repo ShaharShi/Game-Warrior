@@ -25,7 +25,6 @@ body {
 .block { display: block; }
 
 // Cards dynamic background colors -- >
-
 .brown-bg {
     background: $brown_bg;
     border: 10px solid rgba(0, 0, 0, 0.4);
@@ -179,7 +178,6 @@ body {
 }
 
 // -------------------------------  Animations  ---- >
-
 .zoom-in-down {
     -webkit-animation-name: zoomInDown;
     animation-name: zoomInDown;
@@ -204,3 +202,26 @@ body {
         animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     }
 } 
+
+// -----------------  Media Queries Brakpoints  ---- >
+@media screen and (max-width: 1400px) {
+    .warrior-cards-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .main-container {
+        width: 95vw;
+    }
+    .warrior-cards-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media screen and (max-width: 750px) {
+    .warrior-cards-wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
