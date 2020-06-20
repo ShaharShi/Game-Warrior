@@ -6,6 +6,10 @@
   font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   background: url("https://i.pinimg.com/originals/86/cb/99/86cb99d27d7cdaef5572a21c5167e625.png") no-repeat;
   background-size: 100vw 100vh;
@@ -154,6 +158,7 @@ body {
 }
 
 .warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-item-3 .card-icon span {
+  display: block;
   font-size: 1.2rem;
 }
 
@@ -193,5 +198,10 @@ body {
 .button-section .generate-btn:hover {
   color: white;
   letter-spacing: 2px;
+}
+
+.button-section .generate-btn:active {
+  -webkit-box-shadow: inset 0 0 9px black;
+          box-shadow: inset 0 0 9px black;
 }
 /*# sourceMappingURL=style.css.map */

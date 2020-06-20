@@ -55,8 +55,81 @@ function generateLevel() {
     return Math.floor(Math.random() * 10) + 1;
 }
 
-for (i = 0; i < 3; i++) {
+function drawCard() {
+    let newWarrior = generateWarrior();
 
-    let aaa = generateWarrior();
-    console.log(aaa)
+    let cardWrapper = document.createElement('div');
+    let cardSelf = document.createElement('div');
+    let cardItem1 = document.createElement('div');
+    let cardItem2 = document.createElement('div');
+    let cardItem3 = document.createElement('div');
+    cardItem1.className = 'card-item-1';
+    cardItem2.className = 'card-item-2';
+    cardItem3.className = 'card-item-3';
+
+    let title = document.createElement('h1');
+    let typeSpan = document.createElement('span');
+    let img = document.createElement('img');
+    title.innerText = newWarrior.name;
+    typeSpan.innerText = newWarrior.type;
+    img.src = newWarrior.img;
+    img.className = 'block';
+
+    let cardIcon1 = document.createElement('div');
+    let cardIcon2 = document.createElement('div');
+    let cardIcon3 = document.createElement('div');
+    cardIcon1.className = "card-icon";
+    cardIcon2.className = "card-icon";
+    cardIcon3.className = "card-icon";
+
+    let iconEle1 = document.createElement('i');
+    let iconEle2 = document.createElement('b');
+    let iconEle3 = document.createElement('i');
+    iconEle1.classList = 'fas fa-fist-raised';
+    iconEle2.innerText = 'LVL';
+    iconEle3.classList = 'fas fa-bahai';
+    iconEle1.title = 'Power';
+    iconEle3.title = 'Damage';
+
+    let iconData1 = document.createElement('span');
+    let iconData2 = document.createElement('span');
+    let iconData3 = document.createElement('span');
+    iconData1.innerText = newWarrior.power;
+    iconData2.innerText = newWarrior.level;
+    iconData3.innerText = newWarrior.damage;
+
+    switch(true) {
+        case newWarrior.level <= 3: { cardWrapper.classList = 'card-wrapper brown-bg'} break;
+        case newWarrior.level > 3 && newWarrior.level <= 6: { cardWrapper.classList = 'card-wrapper green-bg'} break;
+        case newWarrior.level > 6 && newWarrior.level <= 9: { cardWrapper.classList = 'card-wrapper red-bg'} break;
+        case newWarrior.level === 10: { cardWrapper.classList = 'card-wrapper golden-bg'} break;
+    }
+    if (newWarrior.level < 10) {
+        cardSelf.className = 'card-self';
+    } else {
+        cardSelf.className = 'golden-style-set';
+    }
+
+    document.getElementById('cardsWrapper').appendChild(cardWrapper);
+    cardWrapper.appendChild(cardSelf);
+    cardSelf.appendChild(cardItem1);
+    cardItem1.appendChild(title);
+    cardItem1.appendChild(typeSpan);
+    cardSelf.appendChild(cardItem2);
+    cardItem2.appendChild(img);
+    cardSelf.appendChild(cardItem3);
+
+    cardItem3.appendChild(cardIcon1);
+    cardIcon1.appendChild(iconEle1);
+    cardIcon1.appendChild(iconData1);
+
+    cardItem3.appendChild(cardIcon2);
+    cardIcon2.appendChild(iconEle2);
+    cardIcon2.appendChild(iconData2);
+
+    cardItem3.appendChild(cardIcon3);
+    cardIcon3.appendChild(iconEle3);
+    cardIcon3.appendChild(iconData3);
 }
+
+document.getElementById('generateBtn').addEventListener('click', drawCard);
