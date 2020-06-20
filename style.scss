@@ -20,6 +20,7 @@ $golden_bg: radial-gradient(#ddc000 0%, #ffa515 74%);
 body {
     background: url('https://i.pinimg.com/originals/86/cb/99/86cb99d27d7cdaef5572a21c5167e625.png') no-repeat;
     background-size: 100vw 100vh;
+    background-attachment: fixed;
 }
 .block { display: block; }
 
@@ -28,18 +29,22 @@ body {
 .brown-bg {
     background: $brown_bg;
     border: 10px solid rgba(0, 0, 0, 0.4);
+    &:hover { border-color: rgba(0, 0, 0, 0.8);}
 }
 .green-bg {
     background: $green_bg;
     border: 10px solid rgba(0, 0, 0, 0.4);
+    &:hover { border-color: rgba(0, 0, 0, 0.8);}
 }
 .red-bg {
     background: $red_bg;
     border: 10px solid rgba(0, 0, 0, 0.4);
+    &:hover { border-color: rgba(0, 0, 0, 0.8);}
 }
 .golden-bg {
     background: $golden_bg;
     border: 10px solid rgba(0, 0, 0, 0.4);
+    &:hover { border-color: rgba(0, 0, 0, 0.8);}
 }
 .golden-style-set {
     @extend .card-self;
@@ -60,14 +65,12 @@ body {
 
 // -------------------------------  Card Construct & Style  ---- >
 .main-container {
-    width: 100vw;
+    width: 98vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 .warrior-cards-container {
-    flex-basis: 85%;
     overflow-y: auto;
+    overflow-x: hidden;
 
 
     .warrior-cards-wrapper {
@@ -81,10 +84,13 @@ body {
 
         .card-wrapper {
             justify-self: center;
-            width: 350px;
-            height: 400px;
+            width: 330px;
+            height: 370px;
+            margin-bottom: 40px;
             border-radius: 50px;
-            box-shadow: 0 0 40px rgb(0, 0, 0);
+            box-shadow: 0 0 20px rgb(41, 41, 41);
+            transition: all 0.4s;
+            &:hover { box-shadow: 0 0 25px rgb(0, 0, 0); }
             
             .card-self {
                 height: 100%;
@@ -143,33 +149,58 @@ body {
 
 // -------------------------------  Bottom BTN  ---- >
 .button-section {
-    flex-basis: 15%;
-    
-    .button-inner {
-        position: relative;
-        top: 55px;
-        height: 6px;
-        background: linear-gradient(to right, #363636 0%, black 30%, transparent 38%, transparent 62%, black 70%, #363636 100%);
-        z-index: -1;
-    }
+    width: 160px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+
     .generate-btn {
-        width: 350px;
-        height: 70px;
-        margin: 0 auto;
-        margin-top: 20px;
+        width: 150px;
+        height: 150px;
         color: $light_text_color;
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 1.8rem;
         border: none;
-        border-radius: 20px;
-        background-color: #000000;
-        background-image: linear-gradient(to right bottom, #363636 0%, #181717 100%);
+        border-radius: 50%;
+        background-image: linear-gradient(to right bottom, rgb(23, 23, 23) 0%, rgb(66, 66, 66) 50%,rgb(23, 23, 23) 100%);
         box-shadow: 0 0 9px rgb(0, 0, 0);
+        opacity: 0.7;
         transition: all 0.3s;
+
         &:hover {
+            margin-bottom: 8px;
             color: lighten($light_text_color, 100);
             letter-spacing: 2px;
+            opacity: 1;
         }
         &:active {box-shadow: inset 0 0 9px rgb(0, 0, 0); }
     }
 }
+
+// -------------------------------  Animations  ---- >
+
+.zoom-in-down {
+    -webkit-animation-name: zoomInDown;
+    animation-name: zoomInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@keyframes zoomInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+        transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+        transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    }
+} 

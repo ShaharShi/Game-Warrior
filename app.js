@@ -99,10 +99,10 @@ function drawCard() {
     iconData3.innerText = newWarrior.damage;
 
     switch(true) {
-        case newWarrior.level <= 3: { cardWrapper.classList = 'card-wrapper brown-bg'} break;
-        case newWarrior.level > 3 && newWarrior.level <= 6: { cardWrapper.classList = 'card-wrapper green-bg'} break;
-        case newWarrior.level > 6 && newWarrior.level <= 9: { cardWrapper.classList = 'card-wrapper red-bg'} break;
-        case newWarrior.level === 10: { cardWrapper.classList = 'card-wrapper golden-bg'} break;
+        case newWarrior.level <= 3: { cardWrapper.classList = 'card-wrapper zoom-in-down brown-bg'} break;
+        case newWarrior.level > 3 && newWarrior.level <= 6: { cardWrapper.classList = 'card-wrapper zoom-in-down green-bg'} break;
+        case newWarrior.level > 6 && newWarrior.level <= 9: { cardWrapper.classList = 'card-wrapper zoom-in-down red-bg'} break;
+        case newWarrior.level === 10: { cardWrapper.classList = 'card-wrapper zoom-in-down golden-bg'} break;
     }
     if (newWarrior.level < 10) {
         cardSelf.className = 'card-self';
