@@ -15,6 +15,7 @@ $golden_bg: radial-gradient(#ddc000 0%, #ffa515 74%);
     margin: 0;
     box-sizing: border-box;
     font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
+    &:focus { outline: none; }
 }
 body {
     background: url('https://i.pinimg.com/originals/86/cb/99/86cb99d27d7cdaef5572a21c5167e625.png') no-repeat;
@@ -131,7 +132,7 @@ body {
                         font-size: 1.6rem;
                         text-shadow: -1px -2px 3px black;
                     }
-                    span { font-size: 1.2rem; }
+                    span {display: block; font-size: 1.2rem; }
                 }
             }
         }
@@ -169,8 +170,6 @@ body {
             color: lighten($light_text_color, 100);
             letter-spacing: 2px;
         }
+        &:active {box-shadow: inset 0 0 9px rgb(0, 0, 0); }
     }
 }
-
-
-    
