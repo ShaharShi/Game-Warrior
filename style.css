@@ -13,6 +13,7 @@
 body {
   background: url("https://i.pinimg.com/originals/86/cb/99/86cb99d27d7cdaef5572a21c5167e625.png") no-repeat;
   background-size: 100vw 100vh;
+  background-attachment: fixed;
 }
 
 .block {
@@ -24,9 +25,17 @@ body {
   border: 10px solid rgba(0, 0, 0, 0.4);
 }
 
+.brown-bg:hover {
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
 .green-bg {
   background: radial-gradient(#538c19 0%, #1a512e 74%);
   border: 10px solid rgba(0, 0, 0, 0.4);
+}
+
+.green-bg:hover {
+  border-color: rgba(0, 0, 0, 0.8);
 }
 
 .red-bg {
@@ -34,9 +43,17 @@ body {
   border: 10px solid rgba(0, 0, 0, 0.4);
 }
 
+.red-bg:hover {
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
 .golden-bg {
   background: radial-gradient(#ddc000 0%, #ffa515 74%);
   border: 10px solid rgba(0, 0, 0, 0.4);
+}
+
+.golden-bg:hover {
+  border-color: rgba(0, 0, 0, 0.8);
 }
 
 .golden-style-set .card-item-1 {
@@ -56,21 +73,13 @@ body {
 }
 
 .main-container {
-  width: 100vw;
+  width: 98vw;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .warrior-cards-container {
-  -ms-flex-preferred-size: 85%;
-      flex-basis: 85%;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .warrior-cards-container .warrior-cards-wrapper {
@@ -89,11 +98,19 @@ body {
 .warrior-cards-container .warrior-cards-wrapper .card-wrapper {
   -ms-grid-column-align: center;
       justify-self: center;
-  width: 350px;
-  height: 400px;
+  width: 330px;
+  height: 370px;
+  margin-bottom: 40px;
   border-radius: 50px;
-  -webkit-box-shadow: 0 0 40px black;
-          box-shadow: 0 0 40px black;
+  -webkit-box-shadow: 0 0 20px #292929;
+          box-shadow: 0 0 20px #292929;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.warrior-cards-container .warrior-cards-wrapper .card-wrapper:hover {
+  -webkit-box-shadow: 0 0 25px black;
+          box-shadow: 0 0 25px black;
 }
 
 .warrior-cards-container .warrior-cards-wrapper .card-wrapper .card-self, .warrior-cards-container .warrior-cards-wrapper .card-wrapper .golden-style-set {
@@ -163,41 +180,35 @@ body {
 }
 
 .button-section {
-  -ms-flex-preferred-size: 15%;
-      flex-basis: 15%;
-}
-
-.button-section .button-inner {
-  position: relative;
-  top: 55px;
-  height: 6px;
-  background: -webkit-gradient(linear, left top, right top, from(#363636), color-stop(30%, black), color-stop(38%, transparent), color-stop(62%, transparent), color-stop(70%, black), to(#363636));
-  background: linear-gradient(to right, #363636 0%, black 30%, transparent 38%, transparent 62%, black 70%, #363636 100%);
-  z-index: -1;
+  width: 160px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 10;
 }
 
 .button-section .generate-btn {
-  width: 350px;
-  height: 70px;
-  margin: 0 auto;
-  margin-top: 20px;
+  width: 150px;
+  height: 150px;
   color: #ababab;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.8rem;
   border: none;
-  border-radius: 20px;
-  background-color: #000000;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#363636), to(#181717));
-  background-image: linear-gradient(to right bottom, #363636 0%, #181717 100%);
+  border-radius: 50%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#171717), color-stop(50%, #424242), to(#171717));
+  background-image: linear-gradient(to right bottom, #171717 0%, #424242 50%, #171717 100%);
   -webkit-box-shadow: 0 0 9px black;
           box-shadow: 0 0 9px black;
+  opacity: 0.7;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .button-section .generate-btn:hover {
+  margin-bottom: 8px;
   color: white;
   letter-spacing: 2px;
+  opacity: 1;
 }
 
 .button-section .generate-btn:active {
